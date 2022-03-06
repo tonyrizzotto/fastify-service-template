@@ -4,7 +4,7 @@
   "description": "An API service template built with Fastify.js that allows me to spin up a microservice backend to my desired configurations. Built to work with Google Cloud-SQL, but can be re-configured to connect to any backend source.",
   "main": "index.js",
   "scripts": {
-    "dev:start": "nodemon index.js",
+    "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -18,9 +18,11 @@
     "dotenv": "^16.0.0",
     "fastify": "^3.27.2",
     "fastify-postgres": "^3.6.0",
+    "fastify-swagger": "^4.17.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "pino-pretty": "^7.5.3"
   }
 }

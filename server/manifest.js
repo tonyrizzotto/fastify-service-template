@@ -3,6 +3,7 @@ require('dotenv').config();
 // These variables need to be inserted into your .env before running a project
 module.exports = {
   environment: {
+    env: process.env.ENVIRONMENT || 'development',
     port: process.env.CONNECTIONPORT,
   },
   cloudSqlProxy: {
