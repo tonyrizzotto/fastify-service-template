@@ -32,9 +32,9 @@ DO NOT hardcode secrets into your project.
 
 This template uses a variety of development-only plugins and packages:
 
--- `nodemon` - For quickly restarting the development server after changes are saved.
--- `pino-pretty` - Used as a plugin for Fastify logging to improve readability of request logs.
--- `instance.printRoutes()` - When a server instance is started, prints a radix tree used by the router.
+-- `nodemon` - For quickly restarting the development server after changes are saved.<br>
+-- `pino-pretty` - Used as a plugin for Fastify logging to improve readability of request logs.<br>
+-- `instance.printRoutes()` - When a server instance is started, prints a radix tree used by the router.<br>
 
 #### Configuration for Cloud-SQL
 
