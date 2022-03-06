@@ -38,6 +38,6 @@ This template uses a variety of development-only plugins and packages:
 
 #### Configuration for Cloud-SQL
 
-Out of the box, this project will contain the setup necessary to work with a GCP Cloud-SQL Postgres database, which can be accessed through the `cloud-sql-proxy`.
+Out of the box, this project will contain the setup necessary to work with a GCP Cloud-SQL Postgres database, which can be accessed through the Google [Cloud-SQL-Proxy](https://cloud.google.com/sql/docs/mysql/sql-proxy).
 
 Once you have your CloudSQLProxy running, you should include the `DBUSER`, `DBNAME`, `DBPORT`, `DBHOST` and `DBPASS` into your `.env` file.
