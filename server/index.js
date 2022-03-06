@@ -2,22 +2,18 @@ const manifest = require('./manifest');
 const {
   environment: { env },
 } = manifest;
-
+const { v4: uuidv4 } = require('uuid');
 const server = require('fastify')({
   logger: { prettyPrint: env === 'development' ? true : false },
+  genReqId: (request) => {
+    return uuidv4();
+  },
 });
 const { cldSqlConnection } = require('./db/index');
 const apiPlugin = require('./api');
 
 // Create a server instance
 async function createServer() {
-  // Register Development-only plugins
-  if (env === 'development') {
-    server.ready(() => {
-      console.log(server.printRoutes());
-    });
-  }
-
   // Register Swagger for API documentation
   server.register(require('fastify-swagger'), {
     routePrefix: '/documentation',
@@ -25,7 +21,7 @@ async function createServer() {
   });
 
   // Health Check Route
-  server.get('/healthcheckz', (req, reply) => {
+  server.get('/healthcheckz', (request, reply) => {
     reply.send({ status: 'OK' });
   });
 
@@ -39,6 +35,12 @@ async function createServer() {
     prefix: '/api/v1',
   });
 
+  // Print Routes if development. NOTE: instance.ready() should only be called after all plugins are registered.
+  if (env === 'development') {
+    server.ready(() => {
+      console.log(server.printRoutes());
+    });
+  }
   return server;
 }
 

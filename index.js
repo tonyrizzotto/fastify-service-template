@@ -8,10 +8,6 @@ const start = async () => {
   try {
     server = await createServer();
 
-    // If in development, show route declaration
-    if (env === 'development') {
-    }
-
     // Only if an environment is listed should we expose our server to a port.
     if (env) {
       server.listen(port, () => {

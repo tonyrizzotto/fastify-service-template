@@ -5,7 +5,7 @@ module.exports = async function (server, opts, next) {
     url: '/',
     schema: {
       query: {
-        name: { type: 'integer' },
+        name: { type: 'string' },
       },
     },
     // This is necessary to override the default validation response
@@ -14,15 +14,19 @@ module.exports = async function (server, opts, next) {
       200: {
         type: 'object',
         properties: {
-          hello: { type: 'integer' },
+          hello: { type: 'string' },
         },
       },
     },
     handler: (request, reply) => {
+      request.log.warn(`Request has been received.`);
       const { name } = request.query;
       try {
         if (request.validationError) {
-          reply.code(400).send({ message: 'Bad Request.' });
+          reply.code(400).send({
+            id: request.id,
+            message: 'Bad Request.',
+          });
         } else {
           reply.status(200).send({ hello: `${!name ? 'world' : name}` });
         }
