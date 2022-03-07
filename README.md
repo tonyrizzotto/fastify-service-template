@@ -1,6 +1,6 @@
 # Fastify Service Template
 
-This template is used to spin up a microservice backend with ease. Built using fastify to have both a customizable and performante service.
+This template is used to spin up a microservice backend with ease. Built using fastify to have both a customizable and performant service.
 
 ## How to Use
 
