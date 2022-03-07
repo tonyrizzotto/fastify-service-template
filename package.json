@@ -1,9 +1,10 @@
 {
   "name": "@tonyrizzotto/fastify-service-template",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "An API service template built with Fastify.js that allows me to spin up a microservice backend to my desired configurations. Built to work with Google Cloud-SQL, but can be re-configured to connect to any backend source.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
