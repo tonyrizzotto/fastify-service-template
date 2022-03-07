@@ -1,12 +1,19 @@
 {
   "name": "@tonyrizzotto/fastify-service-template",
-  "version": "0.5.0",
-  "description": "An API service template built with Fastify.js that allows me to spin up a microservice backend to my desired configurations. Built to work with Google Cloud-SQL, but can be re-configured to connect to any backend source.",
+  "version": "0.6.0",
+  "description": "An API service template built with Fastify.js that allows me to spin up a microservice backend to my desired configurations. Built to work with Google Cloud-SQL, but can be re-configured to connect to any backend database source.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "v16.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonyrizzotto/fastify-service-template.git"
   },
   "keywords": [
     "fastify",
@@ -15,18 +22,19 @@
   ],
   "author": "Tony Rizzotto",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tonyrizzotto/fastify-service-template/issues"
+  },
+  "homepage": "https://github.com/tonyrizzotto/fastify-service-template#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
-    "fastify": "^3.27.2",
+    "fastify": "^3.27.3",
     "fastify-postgres": "^3.6.0",
-    "fastify-swagger": "^4.17.0",
+    "fastify-swagger": "^4.17.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",
     "pino-pretty": "^7.5.3"
-  },
-  "engines": {
-    "node": "v16.14.0"
   }
 }
