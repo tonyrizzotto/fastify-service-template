@@ -4,7 +4,7 @@ require('dotenv').config();
 module.exports = {
   environment: {
     env: process.env.NODE_ENVIRONMENT || 'development',
-    port: process.env.CONNECTIONPORT,
+    port: process.env.PORT || 8080,
   },
   cloudSqlProxy: {
     dbUser: process.env.DBUSER,
