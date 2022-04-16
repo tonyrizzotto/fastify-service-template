@@ -10,7 +10,7 @@ const server = require('fastify')({
   },
 });
 const { cldSqlConnection } = require('./db/index');
-const apiPlugin = require('./api');
+const { apiPlugin } = require('./api');
 
 // Create a server instance
 async function createServer() {

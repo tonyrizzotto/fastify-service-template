@@ -12,7 +12,7 @@ const start = async () => {
     if (env) {
       server.listen(port, address, () => {
         console.log(
-          `Server listening on Port:${server.server.address().port}...`
+          `Server listening on Port ${server.server.address().port}...`
         );
       });
     }
