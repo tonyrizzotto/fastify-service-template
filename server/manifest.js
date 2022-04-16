@@ -5,6 +5,7 @@ module.exports = {
   environment: {
     env: process.env.NODE_ENVIRONMENT || 'development',
     port: process.env.PORT || 8080,
+    address: process.env.ADDRESS || '0.0.0.0'
   },
   cloudSqlProxy: {
     dbUser: process.env.DBUSER,

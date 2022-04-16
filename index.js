@@ -1,6 +1,6 @@
 const createServer = require('./server');
 const {
-  environment: { env, port },
+  environment: { env, port, address },
 } = require('./server/manifest');
 
 // This function starts the server and launches it to the desired connection port.
@@ -10,7 +10,7 @@ const start = async () => {
 
     // Only if an environment is listed should we expose our server to a port.
     if (env) {
-      server.listen(port, () => {
+      server.listen(port, address, () => {
         console.log(
           `Server listening on Port:${server.server.address().port}...`
         );
